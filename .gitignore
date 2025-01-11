@@ -1,0 +1,47 @@
+# Logs
+*.log
+logs/
+debug.log
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+Debug/
+Release/
+
+# NuGet
+*.nupkg
+# Exclude packages folder but keep everything else under it
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Sensitive files
+secrets.json
+appsettings.Development.json

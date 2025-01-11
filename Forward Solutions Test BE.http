@@ -1,0 +1,6 @@
+@Forward_Solutions_Test_BE_HostAddress = http://localhost:5044/swagger
+
+GET {{Forward_Solutions_Test_BE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
