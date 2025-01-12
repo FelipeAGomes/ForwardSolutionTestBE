@@ -8,13 +8,9 @@ using Forward_Solutions_Test_BE.Domain.Interfaces;
 
 namespace Forward_Solutions_Test_BE.Application.Services
 {
-    public class CalculationService
+    public class CalculationService(ICalculationRepository calculatorRepository)
     {
-        private readonly ICalculationRepository _calculatorRepository;
-        public CalculationService(ICalculationRepository calculatorRepository)
-        {
-            _calculatorRepository = calculatorRepository;
-        }
+        private readonly ICalculationRepository _calculatorRepository = calculatorRepository;
 
         public async Task<Calculation> AddAndSaveAsync(double firstNumber, double secondNumber)
         {
@@ -24,7 +20,7 @@ namespace Forward_Solutions_Test_BE.Application.Services
             {
                 FirstNumber = firstNumber,
                 SecondNumber = secondNumber,
-                Total = total,
+                Total = Math.Round(total, 2),
             };
 
             await _calculatorRepository.SaveAsync(calculation);
